@@ -1,6 +1,6 @@
 ![Python SKATLAZ WRITER LLMS SVN](./skatlazllms.gif)
 
-## 🐙 SKATLAZ WRITER LLMS SVN 🤖
+### 🗺️ SKATLAZ WRITER LLMS SVN 🤖
 
 The **SKATLAZ WRITER LLMS SVN** is a pure Python project designed for automated content generation, documentation management, and localization. It simulates an advanced workflow by integrating custom functions for keyword processing, offline LLM text generation, SVN map data management, and HTML report creation.
 
