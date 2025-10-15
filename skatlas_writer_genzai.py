@@ -115,8 +115,6 @@ def translate_for(default_idiom, target_idiom):
                     return __context
     return False
 
-# --- 5. Final Output Generation ---
-
 def WORKS_DONE() -> str:    
     html_output = "<h1>SKATLAZ LLMS AI Generation Report</h1>\n"
     for prompt_text, chapter_content in LST_CHAPTER:
@@ -132,38 +130,23 @@ def WORKS_DONE() -> str:
     return html_output
 
 if __name__ == "__main__":
-    
-    # --- Step 1: Initialize and Load SVN Map ---
     load_svn_map()
-    
-    # --- Step 2: Define the initial keyword prompt ---
     initial_prompt = "AI Writer LLMS integration with documentation system using python"
-    
-    # --- Step 3: Prepare the tasks list ---
     lst_todo = GETPROMPT(initial_prompt)
-    
-    # --- Step 4: Process tasks and generate chapters ---
     for context_item in lst_todo:
         SKATLAZ_WRITER_LLMS(context_item)
-        
-    # --- Step 5: Demonstrate Translation (using one of the generated chapters) ---
     if LST_CHAPTER:
         original_context = LST_CHAPTER[0][1] # Get the first generated chapter content
         target_idiom = "PT-BR"
         translated_result = TRANSLATE(original_context, target_idiom)
-        
         print("\n--- Translation Example ---")
         print(f"Original Text ({LST_CHAPTER[0][0]}): {original_context[:80]}...")
         print(f"Translated Text ({target_idiom}): {translated_result[:80]}...")
         print("---------------------------\n")
-
-    # --- Step 6: Generate Final HTML Report ---
     final_report_html = WORKS_DONE()
-    
     print("\n\n=============== FINAL HTML REPORT ===============")
     print(final_report_html)
     print("=================================================")
-    
     with open('skatlaz_report.html', 'w') as f:
          f.write(final_report_html)
     print("\nReport written to skatlaz_report.html")
